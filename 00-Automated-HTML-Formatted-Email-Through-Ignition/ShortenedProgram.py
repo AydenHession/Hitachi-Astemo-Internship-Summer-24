@@ -219,12 +219,12 @@ def Main():
 	
 	#All PCU
 	#1st Column
-	TagPathNGA_ALL_PCU = "[KUSG-IGN02]PCU Assembly/StationStatus/BlockA/Counts/Sta1016TotalParts"
+	TagPathNGA_ALL_PCU = "stuffStationStatus/BlockA/Counts/Sta1016TotalParts"
 	TagNGA_ALL_PCU_value = system.tag.readBlocking([TagPathNGA_ALL_PCU])[0].value
 	StringA_ALL_PCU = format_quantity(TagNGA_ALL_PCU_value)
 	
 	#2nd Column
-	TagPathNGB_ALL_PCU = "[KUSG-IGN02]PCU Assembly/StationStatus/TotalNoGoodCount"
+	TagPathNGB_ALL_PCU = "stuffStationStatus/TotalNoGoodCount"
 	TagNGB_ALL_PCU_value = system.tag.readBlocking([TagPathNGB_ALL_PCU])[0].value
 	StringB_ALL_PCU = format_quantity(TagNGB_ALL_PCU_value)
 	
@@ -1065,8 +1065,8 @@ def Main():
 	body = "PCU Reject Data From Date: " + todays_date + " Time: " + current_time + "\n\n" + html_content.strip()
 	
 	
-	#recipients = ["ayden.hession.ps@hitachiastemo.com"]
+	#recipients = [""]
 	
-	recipients = ["ayden.hession.ps@hitachiastemo.com"]
+	recipients = [""]
 	
 	system.net.sendEmail(smtp=smtp, fromAddr=sender, subject=subject, body=body,html=1, to=recipients, password=password)	
