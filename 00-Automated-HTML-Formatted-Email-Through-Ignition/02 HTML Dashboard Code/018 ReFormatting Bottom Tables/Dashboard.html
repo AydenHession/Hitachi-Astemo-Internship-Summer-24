@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Layout</title>
+    <style>
+        body {
+            background-color: #D4F1FF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .block {
+            border: 1px solid #000;
+            margin: 10px;
+            padding: 10px;
+            width: 400px; /* Adjusted width to accommodate layout */
+            background-color: #BFBFBF;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .block-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: #D4F1FF;
+            padding: 5px;
+            border-bottom: 2px solid #000;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        .header-row {
+            background-color: #B0E0E6;
+        }
+
+        .label-row {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .cell {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .header {
+            font-weight: bold;
+            background-color: #B0E0E6;
+        }
+
+        .empty {
+            background-color: #D4F1FF;
+            border: none;
+        }
+
+        .highlight {
+            background-color: #FFDBDB; /* Light red for %NG cells */
+        }
+
+        .highlight-blue {
+            background-color: #DBDBFF; /* Light blue for Qty cells */
+        }
+		
+		.highlight-white {
+			background-color: #FFFFFF;
+		}
+
+        .station {
+            background-color: #D3D3D3; /* Light gray for station numbers */
+        }
+
+        .special-cell {
+            background-color: #f5f2cb; /* Specific numbers background color */
+        }
+
+        .general-cell {
+            background-color: #f5f4f0; /* Rest of the numbers background color */
+        }
+
+        .cell[colspan="2"] {
+            flex: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Block A -->
+        <div class="block" id="blockA">
+            <div class="block-title">BLOCK A</div>
+            <div class="row header-row">
+                <div class="cell header empty"></div>
+                <div class="cell header" colspan="2">1st</div>
+                <div class="cell header" colspan="2">2nd</div>
+                <div class="cell header" colspan="2">3rd</div>
+            </div>
+            <div class="row label-row">
+                <div class="cell empty"></div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1016</div>
+                <div class="cell special-cell">.gettag()</div>
+                <div class="cell general-cell">17.1</div>
+                <div class="cell special-cell">148</div>
+                <div class="cell general-cell">20.11</div>
+                <div class="cell special-cell">0</div>
+                <div class="cell general-cell">0</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1020</div>
+                <div class="cell special-cell">0</div>
+                <div class="cell general-cell">0</div>
+                <div class="cell special-cell">0</div>
+                <div class="cell general-cell">0</div>
+                <div class="cell special-cell">0</div>
+                <div class="cell general-cell">0</div>
+            </div>
+	    <div class="row">
+                <div class="cell station">1030</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+	    <div class="row">
+                <div class="cell station">1040</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+	    <div class="row">
+                <div class="cell station">1048</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+
+	    <div class="row">
+                <div class="cell station">1050</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+	    <div class="row">
+                <div class="cell station">1060</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+	    <div class="row">
+                <div class="cell station">1070</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+	    <div class="row">
+                <div class="cell station">1071</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+	    <div class="row">
+                <div class="cell station">1072</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+	    <div class="row">
+                <div class="cell station">1080</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+        </div>
+        
+        <!-- Block B -->
+        <div class="block" id="blockB">
+            <div class="block-title">BLOCK B</div>
+            <div class="row header-row">
+                <div class="cell header empty"></div>
+                <div class="cell header" colspan="2">1st</div>
+                <div class="cell header" colspan="2">2nd</div>
+                <div class="cell header" colspan="2">3rd</div>
+            </div>
+            <div class="row label-row">
+                <div class="cell empty"></div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1100</div>
+                <div class="cell special-cell">10</div>
+                <div class="cell general-cell">9.57</div>
+                <div class="cell special-cell">133</div>
+                <div class="cell general-cell">18.1</div>
+                <div class="cell special-cell">0</div>
+                <div class="cell general-cell">0</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1101</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1110</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1120</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1500</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1510</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1530</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1140</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1142</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1150</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1160</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1161</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1170</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+        </div>
+
+        <!-- Block C -->
+        <div class="block" id="blockC">
+            <div class="block-title">BLOCK C</div>
+            <div class="row header-row">
+                <div class="cell header empty"></div>
+                <div class="cell header" colspan="2">1st</div>
+                <div class="cell header" colspan="2">2nd</div>
+                <div class="cell header" colspan="2">3rd</div>
+            </div>
+            <div class="row label-row">
+                <div class="cell empty"></div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1180</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1200</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1205</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1210</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1620</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1630</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1640</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1650</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1220</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1230</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1240</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1241</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1245</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1260</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+        </div>
+
+        <!-- Block D -->
+        <div class="block" id="blockD">
+            <div class="block-title">BLOCK D</div>
+            <div class="row header-row">
+                <div class="cell header empty"></div>
+                <div class="cell header" colspan="2">1st</div>
+                <div class="cell header" colspan="2">2nd</div>
+                <div class="cell header" colspan="2">3rd</div>
+            </div>
+            <div class="row label-row">
+                <div class="cell empty"></div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1300</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1310</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1320</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1720</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1730</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1340</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1341</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1345</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+        </div>
+
+        <!-- Block E -->
+        <div class="block" id="blockE">
+            <div class="block-title">BLOCK E</div>
+            <div class="row header-row">
+                <div class="cell header empty"></div>
+                <div class="cell header" colspan="2">1st</div>
+                <div class="cell header" colspan="2">2nd</div>
+                <div class="cell header" colspan="2">3rd</div>
+            </div>
+            <div class="row label-row">
+                <div class="cell empty"></div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+                <div class="cell highlight-blue">Qty</div>
+                <div class="cell highlight">%NG</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1360</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1370</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1371</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1375</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1380</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1381</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1385</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1390</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1398</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1400</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+            <div class="row">
+                <div class="cell station">1410</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+                <div class="cell special-cell">55</div>
+                <div class="cell general-cell">55</div>
+            </div>
+        </div>
+		<!-- PCU NG Data -->
+        <div class="block" id="blockE">
+            <div class="block-title">PCU Data Overview</div>
+            <div class="row header-row">
+                <div class="cell header empty"></div>
+                <div class="cell header" colspan="2">Total Loaded</div>
+                <div class="cell header" colspan="2">Total NG</div>
+                <div class="cell header" colspan="2">NG %</div>
+            </div>
+            <div class="row">
+                <div class="cell station">Block A</div>
+                <div class="cell header" colspan="2">100</div>
+                <div class="cell header" colspan="2">101</div>
+                <div class="cell header" colspan="2">102</div>
+            </div>
+            <div class="row">
+                <div class="cell station">Block B</div>
+                <div class="cell header" colspan="2">200</div>
+                <div class="cell header" colspan="2">201</div>
+                <div class="cell header" colspan="2">202</div>
+            </div>
+            <div class="row">
+                <div class="cell station">Block C</div>
+                <div class="cell header" colspan="2">300</div>
+                <div class="cell header" colspan="2">301</div>
+                <div class="cell header" colspan="2">302</div>
+            </div>
+            <div class="row">
+                <div class="cell station">Block D</div>
+                <div class="cell header" colspan="2">400</div>
+                <div class="cell header" colspan="2">401</div>
+                <div class="cell header" colspan="2">402</div>
+            </div>
+            <div class="row">
+                <div class="cell station">Block E</div>
+                <div class="cell header" colspan="2">500</div>
+                <div class="cell header" colspan="2">501</div>
+                <div class="cell header" colspan="2">502</div>
+            </div>
+            <div class="row">
+                <div class="cell station">All PCU</div>
+                <div class="cell header" colspan="2">600</div>
+                <div class="cell header" colspan="2">601</div>
+                <div class="cell header" colspan="2">602</div>
+            </div>
+		</div>
+    </div>
+</body>
+</html>

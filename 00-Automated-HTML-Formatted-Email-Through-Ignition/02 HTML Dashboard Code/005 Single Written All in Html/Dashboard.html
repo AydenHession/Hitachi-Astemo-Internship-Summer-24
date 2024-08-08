@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Table</title>
+    <style>
+        body {
+            background-color: #c8e6f9;
+            font-family: Arial, sans-serif;
+        }
+        .table-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 10px;
+            width: 200px;
+        }
+        th, td {
+            border: 1px solid #000;
+            text-align: center;
+            padding: 5px;
+        }
+        th {
+            background-color: #d9edf7;
+        }
+        .header-1st {
+            background-color: #b3e5fc;
+        }
+        .header-2nd, .header-3rd {
+            background-color: #b3e5fc;
+        }
+        .qty, .ng, .zero {
+            background-color: #fce4ec;
+        }
+        .highlight {
+            background-color: #ffe082;
+        }
+        .highlight-zero {
+            background-color: #f48fb1;
+        }
+        .zero {
+            background-color: #e1bee7;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th colspan="3">BLOCK A</th>
+            </tr>
+            <tr>
+                <td class="header-1st">1st</td>
+                <td class="header-2nd">2nd</td>
+                <td class="header-3rd">3rd</td>
+            </tr>
+            <tr>
+                <td class="qty">Qty</td>
+                <td class="qty">Qty</td>
+                <td class="qty">Qty</td>
+            </tr>
+            <tr>
+                <td class="ng">%NG</td>
+                <td class="ng">%NG</td>
+                <td class="ng">%NG</td>
+            </tr>
+            <tr>
+                <td class="highlight">1016</td>
+                <td class="highlight">92</td>
+                <td class="highlight-zero">17.1</td>
+            </tr>
+            <tr>
+                <td class="highlight">148</td>
+                <td class="highlight-zero">20.11</td>
+                <td class="highlight">0</td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <th colspan="3">BLOCK B</th>
+            </tr>
+            <tr>
+                <td class="header-1st">1st</td>
+                <td class="header-2nd">2nd</td>
+                <td class="header-3rd">3rd</td>
+            </tr>
+            <tr>
+                <td class="qty">Qty</td>
+                <td class="qty">Qty</td>
+                <td class="qty">Qty</td>
+            </tr>
+            <tr>
+                <td class="ng">%NG</td>
+                <td class="ng">%NG</td>
+                <td class="ng">%NG</td>
+            </tr>
+            <tr>
+                <td class="highlight">1100</td>
+                <td class="highlight">10</td>
+                <td class="highlight-zero">9.57</td>
+            </tr>
+            <tr>
+                <td class="highlight">133</td>
+                <td class="highlight-zero">18.1</td>
+                <td class="highlight">0</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

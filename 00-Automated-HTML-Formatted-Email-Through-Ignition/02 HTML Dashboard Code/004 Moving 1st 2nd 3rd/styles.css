@@ -1,0 +1,76 @@
+/* styles.css */
+body {
+    background-color: #D4F1FF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.block {
+    border: 1px solid #000;
+    margin: 10px;
+    padding: 10px;
+    width: 420px; /* Adjusted width to fit the layout */
+    background-color: #F0F8FF;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.block-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: #D4F1FF;
+    padding: 5px;
+    border-bottom: 2px solid #000;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.row.header-row {
+    background-color: #B0E0E6;
+}
+
+.row.label-row {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.cell {
+    border: 1px solid #000;
+    padding: 5px;
+    text-align: center;
+    flex: 1;
+}
+
+.cell.header {
+    font-weight: bold;
+    background-color: #B0E0E6;
+}
+
+.cell.empty {
+    background-color: #D4F1FF;
+    border: none;
+}
+
+.cell:nth-child(odd):not(.header) {
+    background-color: #FFDBDB; /* Adjusted color for "Qty" cells */
+}
+
+.cell:nth-child(even):not(.header) {
+    background-color: #FFEFD5; /* Adjusted color for "%NG" cells */
+}
+
+.cell[colspan="2"] {
+    flex: 2; /* Make the cell span two columns */
+}

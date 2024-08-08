@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Layout</title>
+    <style>
+        body {
+            background-color: #D4F1FF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .block {
+            border: 1px solid #000;
+            margin: 10px;
+            padding: 10px;
+            width: 420px;
+            background-color: #F0F8FF;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .block-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: #B0E0E6;
+            padding: 5px;
+            border-bottom: 2px solid #000;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        .header-row {
+            background-color: #ADD8E6;
+        }
+
+        .label-row {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .cell {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .header {
+            font-weight: bold;
+            background-color: #B0E0E6;
+        }
+
+        .empty {
+            background-color: #D4F1FF;
+            border: none;
+        }
+
+        .highlight {
+            background-color: #FFEFD5;
+        }
+
+        .highlight-zero {
+            background-color: #FFDBDB;
+        }
+
+        .cell[colspan="2"] {
+            flex: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Block A -->
+        <div class="block" id="blockA">
+            <div class="block-title">BLOCK A</div>
+            <div class="row header-row">
+                <div class="cell header empty"></div>
+                <div class="cell header" colspan="2">1st</div>
+                <div class="cell header" colspan="2">2nd</div>
+                <div class="cell header" colspan="2">3rd</div>
+            </div>
+            <div class="row label-row">
+                <div class="cell empty"></div>
+                <div class="cell">Qty</div>
+                <div class="cell">%NG</div>
+                <div class="cell">Qty</div>
+                <div class="cell">%NG</div>
+                <div class="cell">Qty</div>
+                <div class="cell">%NG</div>
+            </div>
+            <div class="row">
+                <div class="cell">1016</div>
+                <div class="cell">92</div>
+                <div class="cell highlight">17.1</div>
+                <div class="cell">148</div>
+                <div class="cell highlight">20.11</div>
+                <div class="cell">0</div>
+                <div class="cell highlight-zero">0</div>
+            </div>
+        </div>
+        
+        <!-- Block B -->
+        <div class="block" id="blockB">
+            <div class="block-title">BLOCK B</div>
+            <div class="row header-row">
+                <div class="cell header empty"></div>
+                <div class="cell header" colspan="2">1st</div>
+                <div class="cell header" colspan="2">2nd</div>
+                <div class="cell header" colspan="2">3rd</div>
+            </div>
+            <div class="row label-row">
+                <div class="cell empty"></div>
+                <div class="cell">Qty</div>
+                <div class="cell">%NG</div>
+                <div class="cell">Qty</div>
+                <div class="cell">%NG</div>
+                <div class="cell">Qty</div>
+                <div class="cell">%NG</div>
+            </div>
+            <div class="row">
+                <div class="cell">1100</div>
+                <div class="cell">10</div>
+                <div class="cell highlight">9.57</div>
+                <div class="cell">133</div>
+                <div class="cell highlight">18.1</div>
+                <div class="cell">0</div>
+                <div class="cell highlight-zero">0</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
